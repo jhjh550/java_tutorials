@@ -15,7 +15,7 @@ public class Main {
             System.out.println(
                     "Thread state(after 1sec) = " + thread.getState());
 
-            thread.join();
+            thread.join(500);
             thread.interrupt();
             System.out.println(
                     "Thread sate(after join)="+thread.getState());
