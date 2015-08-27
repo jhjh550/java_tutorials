@@ -1,4 +1,4 @@
-package com.company.t06_intterrupt;
+package com.company.t06_interrupt;
 
 /**
  * Created by Mirim on 2015-08-27.
