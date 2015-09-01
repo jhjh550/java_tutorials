@@ -8,6 +8,13 @@ import java.io.File;
 public class FileInfo {
     public static void main(String[] args){
         String filePath = "C:"+File.separator+"Temp"+File.separator+"SLog.log";
+        File f = new File(filePath);
+        if(f.exists()){
+            System.out.println("length : "+f.length());
+            System.out.println("absolutePath : "+f.getAbsolutePath());
+            System.out.println("name : "+f.getName());
+        }
 
+        File f2 = new File("C:\\Temp");
     }
 }
