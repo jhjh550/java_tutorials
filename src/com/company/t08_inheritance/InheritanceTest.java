@@ -7,7 +7,7 @@ public class InheritanceTest {
     public static void main(String[] args){
         class Parent{
             public String read(){
-                return "Parnet �Դϴ�";
+                return "Parnet 입니다";
             }
         }
 
@@ -33,5 +33,17 @@ public class InheritanceTest {
                 return p.read()+": thirdChild";
             }
         }
+
+        FirstChild fc = new FirstChild();
+        System.out.println(fc.read());
+
+        SecondChild sc = new SecondChild();
+        System.out.println(sc.read());
+
+        ThirdChild tc1 = new ThirdChild(fc);
+        System.out.println(tc1.read());
+
+        ThirdChild tc2 = new ThirdChild(sc);
+        System.out.println(tc2.read());
     }
 }
