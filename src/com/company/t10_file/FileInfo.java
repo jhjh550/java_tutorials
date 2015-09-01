@@ -16,5 +16,20 @@ public class FileInfo {
         }
 
         File f2 = new File("C:\\Temp");
+        if(f2.isDirectory()){
+            File[] fileList = f2.listFiles();
+            for(int i=0; i<fileList.length; i++){
+                System.out.println(fileList[i].getName());
+            }
+        }
     }
 }
+
+
+
+
+
+
+
+
+
