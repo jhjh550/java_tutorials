@@ -16,5 +16,22 @@ public class InheritanceTest {
                 return super.read()+": firstChild";
             }
         }
+
+        class SecondChild extends Parent{
+            public String read(){
+                return super.read()+": secondChild";
+            }
+        }
+
+        class ThirdChild extends Parent{
+            Parent p;
+            public ThirdChild(Parent p){
+                this.p = p;
+            }
+
+            public String read(){
+                return p.read()+": thirdChild";
+            }
+        }
     }
 }
