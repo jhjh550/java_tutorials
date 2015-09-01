@@ -17,11 +17,14 @@ public class FileStreamTest {
             while((i = fis.read())!=-1){
                 System.out.write(i);
             }
-
         } catch (Exception e){
             e.printStackTrace();
         } finally {
-            fis.close();
+            try {
+                fis.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
