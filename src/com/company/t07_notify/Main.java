@@ -23,10 +23,16 @@ public class Main {
         synchronized (monitor){
             monitor.notify();
         }
+
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(
+                "thread state(after join)=" + thread.getState());
     }
 }
-
-
 
 
 
