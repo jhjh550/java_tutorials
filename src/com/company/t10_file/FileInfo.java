@@ -19,7 +19,10 @@ public class FileInfo {
         if(f2.isDirectory()){
             File[] fileList = f2.listFiles();
             for(int i=0; i<fileList.length; i++){
-                System.out.println(fileList[i].getName());
+                System.out.print(fileList[i].getName());
+                System.out.print("\t");
+                System.out.print(fileList[i].length());
+                System.out.print("\n");
             }
         }
     }
