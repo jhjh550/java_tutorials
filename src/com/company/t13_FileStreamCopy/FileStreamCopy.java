@@ -14,8 +14,20 @@ public class FileStreamCopy {
         try {
             fis = new FileInputStream("C:\\Temp\\PV3.txt");
             fos = new FileOutputStream("C:\\Temp\\PV3_copy.txt");
+            byte[] buffer = new byte[512];
+            int readcount=0;
+            while((readcount = fis.read(buffer)) != -1){
+                fos.write(buffer,0,readcount);
+            }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            try {
+                fis.close();
+                fos.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }
