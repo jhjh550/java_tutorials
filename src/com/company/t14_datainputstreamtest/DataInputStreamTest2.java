@@ -25,7 +25,7 @@ public class DataInputStreamTest2 {
             System.out.println("byte: " + b2);
             System.out.println("int : "+i);
             System.out.println("double : "+d);
-            System.out.println("string : "+s);
+            System.out.println("string :입니다. "+s);
 
         }catch (Exception e){
             e.printStackTrace();
