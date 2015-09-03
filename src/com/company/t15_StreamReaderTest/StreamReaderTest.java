@@ -19,10 +19,22 @@ public class StreamReaderTest {
             isr = new InputStreamReader(fis);
             osw = new OutputStreamWriter(System.out);
 
-
+            char[] buffer = new char[512];
+            int readcount = 0;
+            while((readcount = isr.read(buffer)) != -1){
+                osw.write(buffer, 0, readcount);
+            }
 
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            try {
+                fis.close();
+                isr.close();
+                osw.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
 
 
