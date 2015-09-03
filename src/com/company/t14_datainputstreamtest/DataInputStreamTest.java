@@ -13,9 +13,21 @@ public class DataInputStreamTest {
 
         try {
             fos = new FileOutputStream("C:\\Temp\\myTest.bin");
-            dos = new DataOutputStream();
+            dos = new DataOutputStream(fos);
+            dos.writeBoolean(true);
+            dos.writeByte(5);
+            dos.writeInt(100);
+            dos.writeDouble(200.5);
+            dos.writeUTF("hello world");
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            try {
+                fos.close();
+                dos.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
 
     }
