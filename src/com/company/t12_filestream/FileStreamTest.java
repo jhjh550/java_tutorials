@@ -14,8 +14,10 @@ public class FileStreamTest {
         try {
             fis = new FileInputStream("C:\\Temp\\Slog.log");
             int i = 0;
-            while((i = fis.read())!=-1){
-                System.out.write(i);
+            byte[] buffer = new byte[512];
+            while((i = fis.read(buffer))!=-1){
+                //System.out.write(i);
+                System.out.write(buffer, 0, i);
             }
         } catch (Exception e){
             e.printStackTrace();
