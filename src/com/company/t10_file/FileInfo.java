@@ -16,6 +16,7 @@ public class FileInfo {
         }
 
         int totalLength = 0;
+        int fileCount = 0;
         File f2 = new File("C:\\Users\\Mirim");
         if(f2.isDirectory()){
             File[] fileList = f2.listFiles();
@@ -25,13 +26,11 @@ public class FileInfo {
                 }else{
                     System.out.print(fileList[i].getName());
                     totalLength += fileList[i].length();
-                    //System.out.print("\t");
-                    //System.out.print(fileList[i].length());
-
+                    fileCount++;
                 }
                 System.out.print("\n");
             }
-            System.out.println(totalLength+"πŸ¿Ã∆Æ");
+            System.out.println(fileCount+"Í∞ú ÌååÏùº "+totalLength+"Î∞îÏù¥Ìä∏");
         }
     }
 }
