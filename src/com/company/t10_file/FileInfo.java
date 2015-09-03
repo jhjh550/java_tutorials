@@ -15,15 +15,23 @@ public class FileInfo {
             System.out.println("name : "+f.getName());
         }
 
-        File f2 = new File("C:\\Temp");
+        int totalLength = 0;
+        File f2 = new File("C:\\Users\\Mirim");
         if(f2.isDirectory()){
             File[] fileList = f2.listFiles();
             for(int i=0; i<fileList.length; i++){
-                System.out.print(fileList[i].getName());
-                System.out.print("\t");
-                System.out.print(fileList[i].length());
+                if(fileList[i].isDirectory()) {
+                    System.out.print("["+fileList[i].getName()+"]");
+                }else{
+                    System.out.print(fileList[i].getName());
+                    totalLength += fileList[i].length();
+                    //System.out.print("\t");
+                    //System.out.print(fileList[i].length());
+
+                }
                 System.out.print("\n");
             }
+            System.out.println(totalLength+"¹ÙÀÌÆ®");
         }
     }
 }
