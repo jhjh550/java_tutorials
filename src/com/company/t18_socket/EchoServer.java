@@ -1,5 +1,6 @@
 package com.company.t18_socket;
 
+import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,8 +18,24 @@ public class EchoServer {
             InetAddress address = socket.getInetAddress();
             System.out.println(address.getHostAddress()+" 로부터 접속했습니다.");
 
+            OutputStream out = socket.getOutputStream();
+            InputStream in = socket.getInputStream();
+
+            BufferedReader br =
+                    new BufferedReader(new InputStreamReader(in));
+            PrintWriter pw =
+                    new PrintWriter(new OutputStreamWriter(out));
+
+
         }catch (Exception e){
             e.printStackTrace();
         }
     }
 }
+
+
+
+
+
+
+
