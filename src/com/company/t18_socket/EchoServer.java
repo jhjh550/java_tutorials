@@ -11,12 +11,12 @@ import java.net.Socket;
 public class EchoServer {
     public static void main(String[] args){
         try {
-            System.out.println("Á¢¼Ó´ë±â...");
+            System.out.println("ì ‘ì†ëŒ€ê¸°...");
             ServerSocket server = new ServerSocket(10000);
 
             Socket socket = server.accept();
             InetAddress address = socket.getInetAddress();
-            System.out.println(address.getHostAddress()+" ·ÎºÎÅÍ Á¢¼ÓÇß½À´Ï´Ù.");
+            System.out.println(address.getHostAddress()+" ë¡œë¶€í„° ì ‘ì†í–ˆìŠµë‹ˆë‹¤.");
 
             OutputStream out = socket.getOutputStream();
             InputStream in = socket.getInputStream();
@@ -28,7 +28,7 @@ public class EchoServer {
 
             String line = null;
             while((line = br.readLine()) != null){
-                System.out.println("Å¬¶óÀÌ¾ğÆ®¿¡¼­ Àü¼Û ¹ŞÀº ¹®ÀÚ¿­"+line);
+                System.out.println("í´ë¼ì´ì–¸íŠ¸ì—ì„œ ì „ì†¡ ë°›ì€ ë¬¸ìì—´"+line);
                 pw.println(line);
                 pw.flush();
             }
