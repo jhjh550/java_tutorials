@@ -6,7 +6,7 @@ import java.io.Serializable;
  * Created by Mirim on 2015-09-08.
  */
 public class Book implements Serializable{
-    private String isbn;
+    private transient String isbn;
     private String title;
     private String author;
     private int price;

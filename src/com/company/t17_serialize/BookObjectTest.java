@@ -12,9 +12,9 @@ public class BookObjectTest {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
 
-        Book b1 = new Book("a0001", "ÀÚ¹Ù1", "È«±æµ¿", 10000);
-        Book b2 = new Book("a0002", "ÀÚ¹Ù2", "°¡³ª´Ù", 12000);
-        Book b3 = new Book("a0003", "ÀÚ¹Ù3", "abc", 13000);
+        Book b1 = new Book("a0001", "ìë°”1", "í™ê¸¸ë™", 10000);
+        Book b2 = new Book("a0002", "ìë°”2", "ê°€ë‚˜ë‹¤", 12000);
+        Book b3 = new Book("a0003", "ìë°”3", "abc", 13000);
 
         ArrayList<Book> list = new ArrayList<Book>();
         list.add(b1);
@@ -28,7 +28,7 @@ public class BookObjectTest {
             oos.writeObject(list);
             oos.reset();
 
-            System.out.println("ÀúÀå ¿Ï·á");
+            System.out.println("ì €ì¥ ì™„ë£Œ");
         }catch (Exception e){
             e.printStackTrace();
         }finally {
