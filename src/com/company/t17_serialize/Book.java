@@ -1,9 +1,11 @@
 package com.company.t17_serialize;
 
+import java.io.Serializable;
+
 /**
  * Created by Mirim on 2015-09-08.
  */
-public class Book {
+public class Book implements Serializable{
     private String isbn;
     private String title;
     private String author;
@@ -47,4 +49,23 @@ public class Book {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "isbn='" + isbn + '\'' +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
+
+
+
+
+
+
+
+
+
