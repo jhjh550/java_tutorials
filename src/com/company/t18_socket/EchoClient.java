@@ -20,6 +20,16 @@ public class EchoClient {
             BufferedReader br
                     = new BufferedReader(new InputStreamReader(in));
             String line = null;
+            while((line = keyboard.readLine()) != null){
+                pw.println(line);
+                pw.flush();
+
+                String echo = br.readLine();
+                System.out.println("server : "+echo );
+            }
+            pw.close();
+            br.close();
+            socket.close();
 
 
 

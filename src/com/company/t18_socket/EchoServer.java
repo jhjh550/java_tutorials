@@ -21,6 +21,9 @@ public class EchoServer {
             OutputStream out = socket.getOutputStream();
             InputStream in = socket.getInputStream();
 
+            BufferedReader keyboard =
+                    new BufferedReader(new InputStreamReader(System.in));
+
             BufferedReader br =
                     new BufferedReader(new InputStreamReader(in));
             PrintWriter pw =
@@ -28,8 +31,10 @@ public class EchoServer {
 
             String line = null;
             while((line = br.readLine()) != null){
-                System.out.println("클라이언트에서 전송 받은 문자열"+line);
-                pw.println(line);
+                System.out.println("client : "+line);
+
+                String str = keyboard.readLine();
+                pw.println(str);
                 pw.flush();
             }
             pw.close();
