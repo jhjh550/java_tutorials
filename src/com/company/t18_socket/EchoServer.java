@@ -26,6 +26,12 @@ public class EchoServer {
             PrintWriter pw =
                     new PrintWriter(new OutputStreamWriter(out));
 
+            String line = null;
+            while((line = br.readLine()) != null){
+                System.out.println("클라이언트에서 전송 받은 문자열"+line);
+
+            }
+
 
         }catch (Exception e){
             e.printStackTrace();
