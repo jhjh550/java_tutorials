@@ -29,8 +29,12 @@ public class EchoServer {
             String line = null;
             while((line = br.readLine()) != null){
                 System.out.println("클라이언트에서 전송 받은 문자열"+line);
-
+                pw.println(line);
+                pw.flush();
             }
+            pw.close();
+            br.close();
+            socket.close();
 
 
         }catch (Exception e){
