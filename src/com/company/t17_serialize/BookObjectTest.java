@@ -20,6 +20,25 @@ public class BookObjectTest {
         list.add(b1);
         list.add(b2);
         list.add(b3);
+
+        try {
+            fos = new FileOutputStream("C:\\Temp\\booklist.dat");
+            oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(list);
+            oos.reset();
+
+            System.out.println("저장 완료");
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                fos.close();
+                oos.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 }
 
