@@ -39,6 +39,7 @@ public class EchoServer {
                 pw.println(str);
                 pw.flush();
             }
+
             pw.close();
             br.close();
             socket.close();
