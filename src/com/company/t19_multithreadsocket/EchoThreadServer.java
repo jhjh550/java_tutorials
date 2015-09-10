@@ -13,8 +13,8 @@ public class EchoThreadServer {
     public static void main(String[] args){
 
         try{
-            ServerSocket server = new ServerSocket(10001);
-            System.out.println("Á¢¼Ó´ë±â....");
+            ServerSocket server = new ServerSocket(10000);
+            System.out.println("ì ‘ì†ëŒ€ê¸°....");
 
             while (true){
                 Socket socket = server.accept();

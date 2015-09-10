@@ -7,5 +7,6 @@
     <file url="file://$PROJECT_DIR$/src/com/company/t17_serialize/BookObjectTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/company/t18_socket/EchoClient.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/com/company/t18_socket/EchoServer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/company/t19_multithreadsocket/EchoThreadServer.java" charset="UTF-8" />
   </component>
 </project>
