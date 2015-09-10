@@ -10,7 +10,7 @@ import java.net.Socket;
 public class QuizServerNew {
     public static void main(String[] args){
         try {
-            System.out.println("Á¢¼Ó´ë±â...");
+            System.out.println("ì ‘ì†ëŒ€ê¸°...");
             ServerSocket server = new ServerSocket(10000);
 
             Socket socket = server.accept();
@@ -35,7 +35,7 @@ public class QuizServerNew {
                 pw.flush();
             }
 
-            Thread.sleep(100000);
+            //Thread.sleep(100000);
 
         }catch (Exception e){
             e.printStackTrace();

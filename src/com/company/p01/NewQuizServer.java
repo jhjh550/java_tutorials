@@ -29,9 +29,14 @@ public class NewQuizServer {
 
             BufferedReader br = new BufferedReader(isr);
                     //new BufferedReader(new InputStreamReader(in));
+
+            PrintWriter pw =
+                    new PrintWriter(new OutputStreamWriter(out));
+
             String line;
             while( (line = br.readLine()) != null ){
-
+                pw.println(line);
+                pw.flush();
             }
         } catch (Exception e) {
             e.printStackTrace();
