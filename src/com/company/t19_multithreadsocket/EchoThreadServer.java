@@ -1,7 +1,10 @@
 package com.company.t19_multithreadsocket;
 
+import java.io.*;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.Buffer;
 
 /**
  * Created by Mirim on 2015-09-10.
@@ -12,6 +15,28 @@ public class EchoThreadServer {
             private Socket socket;
             public EchoThread(Socket socket){
                 this.socket = socket;
+            }
+
+            public void run(){
+                InetAddress address = socket.getInetAddress();
+                System.out.println(address.getHostAddress()+" 부터 접속했습니다.");
+                try {
+                    OutputStream out = socket.getOutputStream();
+                    InputStream in = socket.getInputStream();
+
+                    BufferedReader br =
+                            new BufferedReader(new InputStreamReader(in));
+                    PrintWriter pw =
+                            new PrintWriter(new OutputStreamWriter(out));
+
+                    String line;
+                    while((line = br.readLine())!= null){
+
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
             }
         }
 
