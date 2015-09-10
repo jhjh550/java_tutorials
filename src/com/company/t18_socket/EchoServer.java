@@ -15,6 +15,8 @@ public class EchoServer {
             ServerSocket server = new ServerSocket(10000);
 
             Socket socket = server.accept();
+
+
             InetAddress address = socket.getInetAddress();
             System.out.println(address.getHostAddress()+" 로부터 접속했습니다.");
 
