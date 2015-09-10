@@ -8,6 +8,13 @@ import java.net.Socket;
  */
 public class EchoThreadServer {
     public static void main(String[] args){
+        class EchoThread extends Thread{
+            private Socket socket;
+            public EchoThread(Socket socket){
+                this.socket = socket;
+            }
+        }
+
         try{
             ServerSocket server = new ServerSocket(10001);
             System.out.println("접속대기....");
@@ -21,8 +28,6 @@ public class EchoThreadServer {
             e.printStackTrace();
         }
 
-        class EchoThread extends Thread{
 
-        }
     }
 }
