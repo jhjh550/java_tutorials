@@ -12,11 +12,14 @@ public class FirstWindow extends JFrame{
         setTitle(title);
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    }
-
-    public void changeColor(){
         Container pane = getContentPane();
         pane.setBackground(Color.YELLOW);
+    }
+
+    public void addMyButton(){
+        JButton btn = new JButton("First Button");
+        add(btn);
+        setVisible(true);
     }
 
     public static void main(String[] args){
@@ -26,8 +29,15 @@ public class FirstWindow extends JFrame{
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
+            fw.addMyButton();
         }
-        fw.changeColor();
+//        JButton btn = new JButton("First Button");
+//        fw.add(btn);
+//        fw.setVisible(true);
+        fw.addMyButton();
+
+
+    //    fw.changeColor();
 
 //        JFrame fw = new JFrame();
 //        fw.setTitle("FirstWindow");
