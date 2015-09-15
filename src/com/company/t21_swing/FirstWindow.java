@@ -2,6 +2,8 @@ package com.company.t21_swing;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Mirim on 2015-09-15.
@@ -18,6 +20,14 @@ public class FirstWindow extends JFrame{
 
     public void addMyButton(){
         JButton btn = new JButton("First Button");
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.print("Button clicked");
+            }
+        });
+
+
         add(btn);
         setVisible(true);
     }
