@@ -2,6 +2,7 @@ package com.company.t20_chatserver;
 
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
 
 /**
  * Created by Mirim on 2015-09-10.
@@ -9,12 +10,13 @@ import java.net.Socket;
 public class ChatServer {
     public static void main(String[] args){
         try {
-            System.out.println("Á¢¼Ó ´ë±â...");
+            System.out.println("ì ‘ì† ëŒ€ê¸°...");
             ServerSocket server = new ServerSocket(10000);
 
+            HashMap hm = new HashMap();
             while(true){
                 Socket socket = server.accept();
-                ChatThread th = new ChatThread(socket);
+                ChatThread th = new ChatThread(socket, hm);
                 th.start();
             }
 
