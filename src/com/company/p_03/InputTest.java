@@ -26,7 +26,22 @@ public class InputTest {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
+        }
+        try {
+            fr = new FileReader("C:\\Temp\\aaa.txt");
+            char[] buffer = new char[512];
+            int readcount = 0;
+            while((readcount = fr.read(buffer)) != -1 ){
+                System.out.println(buffer);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                fr.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }
