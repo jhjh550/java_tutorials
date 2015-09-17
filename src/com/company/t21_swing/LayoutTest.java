@@ -18,14 +18,21 @@ public class LayoutTest extends JFrame {
         btn4 = new JButton("East");
         btn5 = new JButton("Center");
 
-        setLayout(new BorderLayout());
-        add(btn1, "North");
-        add(btn2, "West");
-        add(btn3, "South");
-        add(btn4, "East");
-        add(btn5, "Center");
+//        setLayout(new BorderLayout(50,20));
+//        add(btn1, "North");
+//        add(btn2, "West");
+//        add(btn3, "South");
+//        add(btn4, "East");
+//        add(btn5, "Center");
 
-        setSize(300,200);
+//        setLayout(new FlowLayout(FlowLayout.LEFT));
+//        add(btn1);
+//        add(btn2);
+//        add(btn3);
+//        add(btn4);
+//        add(btn5);
+
+        setSize(300, 200);
 
         setVisible(true);
 
