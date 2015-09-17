@@ -33,7 +33,7 @@ public class LayoutTest extends JFrame {
 //        add(btn5);
 
         //setLayout(new GridLayout(2,2, 50,20));
-        setLayout(new BoxLayout());
+        setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         add(btn1);
         add(btn2);
         add(btn3);
