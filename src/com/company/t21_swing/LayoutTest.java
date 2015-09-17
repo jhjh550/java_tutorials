@@ -25,13 +25,7 @@ public class LayoutTest extends JFrame {
 //        add(btn4, "East");
 //        add(btn5, "Center");
 
-//        setLayout(new FlowLayout(FlowLayout.LEFT));
-//        add(btn1);
-//        add(btn2);
-//        add(btn3);
-//        add(btn4);
-//        add(btn5);
-
+        //setLayout(new FlowLayout(FlowLayout.LEFT));
         //setLayout(new GridLayout(2,2, 50,20));
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
         add(btn1);
