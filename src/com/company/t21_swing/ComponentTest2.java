@@ -25,11 +25,24 @@ public class ComponentTest2 extends JFrame {
         group.add(r2);
         group.add(r3);
 
+        add(r1);
+        add(r2);
+        add(r3);
+
 
         setLayout(new FlowLayout(FlowLayout.RIGHT));
         add(ch1);
         add(ch2);
         add(ch3);
+
+        JTextField tf = new JTextField();
+        tf.setText("abcdasdfasdfasdfasdf");
+        add(tf);
+
+        JTextArea ta = new JTextArea(10,20);
+        ta.setText("adadfadfasdfasdfas");
+        add(ta);
+
 
         setVisible(true);
     }
@@ -38,6 +51,7 @@ public class ComponentTest2 extends JFrame {
         ComponentTest2 test2 = new ComponentTest2("test2");
     }
 }
+
 
 
 
