@@ -19,6 +19,7 @@ public class FirstWindow extends JFrame{
     }
 
     public void addMyButton(){
+
         JButton btn = new JButton("First Button");
         btn.addActionListener(new ActionListener() {
             @Override
