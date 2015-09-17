@@ -32,6 +32,14 @@ public class LayoutTest extends JFrame {
 //        add(btn4);
 //        add(btn5);
 
+        //setLayout(new GridLayout(2,2, 50,20));
+        setLayout(new BoxLayout());
+        add(btn1);
+        add(btn2);
+        add(btn3);
+        add(btn4);
+        add(btn5);
+
         setSize(300, 200);
 
         setVisible(true);
