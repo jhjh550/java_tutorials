@@ -26,16 +26,25 @@ public class SocketWordTestServer {
 
             BufferedReader br =
                     new BufferedReader(new InputStreamReader(in));
-            PrintWriter pw =
+            final PrintWriter pw =
                     new PrintWriter(new OutputStreamWriter(out));
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        pw.println("hello");
+                        pw.flush();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+
 
             String line = null;
             while ((line = br.readLine()) != null) {
                 System.out.println("client : " + line);
-
-//                String str = keyboard.readLine();
-//                pw.println(str);
-//                pw.flush();
             }
 
             pw.close();
