@@ -17,15 +17,31 @@ public class SocketWordTestClient {
             InputStream in = socket.getInputStream();
             PrintWriter pw
                     = new PrintWriter(new OutputStreamWriter(out));
-            BufferedReader br
+            final BufferedReader br
                     = new BufferedReader(new InputStreamReader(in));
             String line = null;
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while (true) {
+                        String echo = null;
+                        try {
+                            echo = br.readLine();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        System.out.println("server : " + echo);
+                    }
+                }
+            }).start();
+
+
             while((line = keyboard.readLine()) != null){
                 pw.println(line);
                 pw.flush();
 
-                String echo = br.readLine();
-                System.out.println("server : "+echo );
+
             }
             pw.close();
             br.close();

@@ -32,11 +32,14 @@ public class SocketWordTestServer {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    try {
-                        pw.println("hello");
-                        pw.flush();
-                    }catch (Exception e){
-                        e.printStackTrace();
+                    while (true) {
+                        try {
+                            Thread.sleep(2000);
+                            pw.println("hello");
+                            pw.flush();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }).start();
