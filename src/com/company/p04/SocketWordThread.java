@@ -1,5 +1,6 @@
 package com.company.p04;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,9 +11,12 @@ public class SocketWordThread extends Thread {
     String[] data = {"If", "two", "instances" ,"of", "Random"};// are created with the same seed, and the same sequence of method calls is made for each, they will generate and return identical sequences of numbers. In order to guarantee this property, particular algorithms are specified for the class Random. Java implementations must use all the algorithms shown here for the class Random, for the sake of absolute portability of Java code. However, subclasses of class Random are permitted to use other algorithms, so long as they adhere to the general contracts for all the methods}
     Random random = new Random();
     ArrayList<String> list;
+    PrintWriter pw;
 
-    public SocketWordThread(ArrayList<String> list){
+    public SocketWordThread(ArrayList<String> list,
+                            PrintWriter pw){
         this.list = list;
+        this.pw = pw;
     }
 
     public void run(){
@@ -30,6 +34,7 @@ public class SocketWordThread extends Thread {
                 pw.print(list.get(i) + " ");
             }
             pw.println("");
+            pw.flush();
         }
     }
 }

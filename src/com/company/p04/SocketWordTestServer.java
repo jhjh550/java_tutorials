@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 /**
  * Created by Mirim on 2015-09-22.
@@ -11,14 +12,14 @@ import java.net.Socket;
 public class SocketWordTestServer {
     public static void main(String[] args) {
         try {
-            System.out.println("Á¢¼Ó´ë±â...");
+            System.out.println("ì ‘ì†ëŒ€ê¸°...");
             ServerSocket server = new ServerSocket(10000);
 
             Socket socket = server.accept();
 
 
             InetAddress address = socket.getInetAddress();
-            System.out.println(address.getHostAddress() + " ·ÎºÎÅÍ Á¢¼ÓÇß½À´Ï´Ù.");
+            System.out.println(address.getHostAddress() + " ë¡œë¶€í„° ì ‘ì†í–ˆìŠµë‹ˆë‹¤.");
 
             OutputStream out = socket.getOutputStream();
             InputStream in = socket.getInputStream();
@@ -29,20 +30,9 @@ public class SocketWordTestServer {
             final PrintWriter pw =
                     new PrintWriter(new OutputStreamWriter(out));
 
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    while (true) {
-                        try {
-                            Thread.sleep(2000);
-                            pw.println("hello");
-                            pw.flush();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }
-            }).start();
+            ArrayList<String> list = new ArrayList<String>();
+            SocketWordThread th = new SocketWordThread(list, pw);
+            th.start();
 
 
             String line = null;
