@@ -27,9 +27,16 @@ public class SocketWordThread extends Thread {
             list.add(word);
 
             for (int i = 0; i < list.size(); i++) {
-                System.out.print(list.get(i) + " ");
+                pw.print(list.get(i) + " ");
             }
-            System.out.println("");
+            pw.println("");
         }
     }
 }
+
+
+
+
+
+
+
