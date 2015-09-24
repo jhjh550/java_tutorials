@@ -1,8 +1,6 @@
 package com.company.t22_urltest;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -15,9 +13,7 @@ public class urlconnectiontest {
     public static void main(String[] args){
         URL url = null;
         try {
-            url = new URL("http://search.daum.net/"+
-                    "search?w=tot&DA=YZR&t__nil_searchbox=btn"
-                    +"&sug=&sugo=&sq=&o=&q=apple");
+            url = new URL("http://search.daum.net/search?");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -34,6 +30,20 @@ public class urlconnectiontest {
             httpUrlConn.setDoInput(true);
             httpUrlConn.setUseCaches(false);
             httpUrlConn.setDefaultUseCaches(false);
+
+            PrintWriter pw = new PrintWriter(urlConn.getOutputStream());
+            pw.println("w=tot&DA=YZR&t__nil_searchbox=btn&sug=&sugo=&sq=&o=&q=apple");
+            pw.close();
+
+            PrintWriter pw_file = new PrintWriter(
+                    new FileOutputStream("c://temp//querytest.html"));
+
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(urlConn.getInputStream()));
+            String line = null;
+            while((line = br.readLine()) != null){
+                pw_file.println(line);
+            }
 
 
 
