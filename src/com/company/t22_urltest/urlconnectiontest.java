@@ -45,9 +45,9 @@ public class urlconnectiontest {
                 pw_file.println(line);
             }
 
-
-
-
+            pw_file.close();
+            br.close();
+            pw.close();
 
         }catch (Exception e){
             e.printStackTrace();
