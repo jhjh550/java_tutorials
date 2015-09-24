@@ -8,11 +8,11 @@ import java.net.URL;
  * Created by Mirim on 2015-09-24.
  */
 public class crawlerTest {
-    public void craw(String address){
+    public void crawl(String address){
         URL url = null;
 
         try {
-            url = new URL("http://www.google.com");
+            url = new URL(address);
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -33,6 +33,7 @@ public class crawlerTest {
                     if(startIndex> 0 && endIndex>0) {
                         String result = line.substring(startIndex, endIndex);
                         System.out.println(result);
+                        crawl(result);
                     }else{
                         startIndex = endIndex = 0;
                         break;
@@ -55,6 +56,7 @@ public class crawlerTest {
         }
     }
     public static void main(String[] args){
-
+        crawlerTest t = new crawlerTest();
+        t.crawl("http://www.google.com");
     }
 }
