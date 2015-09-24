@@ -16,7 +16,7 @@ public class crawlerTest {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-
+        //<div id=gbar><nobr><b class=gb1>검색</b> <a class=gb1 href="http://www.google.co.kr/imghp?hl=ko&tab=wi">이미지</a>
 
         try {
             InputStream in = url.openStream();
@@ -24,7 +24,15 @@ public class crawlerTest {
                     new InputStreamReader(in));
             String line = null;
             while((line = br.readLine()) != null){
-                System.out.println(line);
+                //System.out.println(line);
+                int startIndex = line.indexOf("href");
+                int endIndex = line.indexOf(">", startIndex);
+
+                String result = line.substring(startIndex, endIndex);
+                System.out.println(result);
+
+
+
             }
             System.out.println("http read end");
 
@@ -35,3 +43,8 @@ public class crawlerTest {
         }
     }
 }
+//String res = line.substring(startIndex, endIndex);
+//System.out.println(res);
+//                System.out.println("start:"+startIndex+" end:"+endIndex);
+//                if(startIndex>0)
+//                    System.out.println(line.substring(startIndex));
