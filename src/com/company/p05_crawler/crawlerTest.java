@@ -1,8 +1,6 @@
 package com.company.p05_crawler;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -19,17 +17,17 @@ public class crawlerTest {
             e.printStackTrace();
         }
 
-        FileOutputStream fos = null;
+
         try {
             InputStream in = url.openStream();
-
-            byte[] buffer = new byte[512];
-            int readCount = 0;
-            while((readCount = in.read(buffer)) != -1){
-
-
+            BufferedReader br = new BufferedReader(
+                    new InputStreamReader(in));
+            String line = null;
+            while((line = br.readLine()) != null){
+                System.out.println(line);
             }
-            System.out.println("file saved");
+            System.out.println("http read end");
+
 
 
         } catch (IOException e) {
