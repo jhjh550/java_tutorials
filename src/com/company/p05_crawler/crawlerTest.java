@@ -8,7 +8,7 @@ import java.net.URL;
  * Created by Mirim on 2015-09-24.
  */
 public class crawlerTest {
-    public static void main(String[] args){
+    public void craw(String address){
         URL url = null;
 
         try {
@@ -16,7 +16,6 @@ public class crawlerTest {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
-        //<div id=gbar><nobr><b class=gb1>검색</b> <a class=gb1 href="http://www.google.co.kr/imghp?hl=ko&tab=wi">이미지</a>
 
         try {
             InputStream in = url.openStream();
@@ -25,11 +24,24 @@ public class crawlerTest {
             String line = null;
             while((line = br.readLine()) != null){
                 //System.out.println(line);
-                int startIndex = line.indexOf("href");
-                int endIndex = line.indexOf(">", startIndex);
+                int startIndex = 0;
+                int endIndex = 0;
+                while (startIndex >= 0){
+                    startIndex = line.indexOf("http", startIndex);
+                    endIndex = line.indexOf("\"", startIndex);
 
-                String result = line.substring(startIndex, endIndex);
-                System.out.println(result);
+                    if(startIndex> 0 && endIndex>0) {
+                        String result = line.substring(startIndex, endIndex);
+                        System.out.println(result);
+                    }else{
+                        startIndex = endIndex = 0;
+                        break;
+                    }
+                    startIndex = endIndex;
+                }
+
+
+
 
 
 
@@ -42,9 +54,7 @@ public class crawlerTest {
             e.printStackTrace();
         }
     }
+    public static void main(String[] args){
+
+    }
 }
-//String res = line.substring(startIndex, endIndex);
-//System.out.println(res);
-//                System.out.println("start:"+startIndex+" end:"+endIndex);
-//                if(startIndex>0)
-//                    System.out.println(line.substring(startIndex));
