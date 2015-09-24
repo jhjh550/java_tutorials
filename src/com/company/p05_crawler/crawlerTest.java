@@ -15,6 +15,7 @@ public class crawlerTest {
             url = new URL(address);
         } catch (MalformedURLException e) {
             e.printStackTrace();
+            return;
         }
 
         try {
@@ -40,17 +41,8 @@ public class crawlerTest {
                     }
                     startIndex = endIndex;
                 }
-
-
-
-
-
-
             }
             System.out.println("http read end");
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         }
