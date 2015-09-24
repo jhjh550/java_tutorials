@@ -28,6 +28,7 @@ public class urltest {
             int readCount = 0;
             while((readCount = in.read(buffer)) != -1){
                 fos.write(buffer);
+
             }
             System.out.println("file saved");
 
